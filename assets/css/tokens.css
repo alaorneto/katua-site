@@ -30,7 +30,7 @@
 
   /* Tipografia */
   --font-display: Archivo, system-ui, sans-serif;
-  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 
   /* Espaçamento (base 4px) */
