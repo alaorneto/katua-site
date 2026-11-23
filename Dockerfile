@@ -16,9 +16,10 @@ LABEL org.opencontainers.image.title="katua-site" \
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker/security-headers.conf /etc/nginx/snippets/security-headers.conf
 
-# O site. Só COPY sobre a base: o build para amd64 e arm64 não precisa de emulação.
-COPY index.html 404.html /usr/share/nginx/html/
-COPY assets /usr/share/nginx/html/assets
+# O site, numa pasta própria (a base traz index.html e 50x.html de exemplo em /usr/share/nginx/html).
+# Só COPY sobre a base: o build para amd64 e arm64 não precisa de emulação.
+COPY index.html 404.html /usr/share/nginx/site/
+COPY assets /usr/share/nginx/site/assets
 
 EXPOSE 8080
 

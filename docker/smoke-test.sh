@@ -70,10 +70,10 @@ check "CSP autoriza o script inline"  'has "$h_root" "$inline_hash"'
 uid="$(docker exec "$name" id -u)"
 check "nginx roda sem root (uid $uid)" '[ "$uid" != 0 ]'
 
-files="$(docker exec "$name" find /usr/share/nginx/html -mindepth 1 -maxdepth 1 | sort | tr '\n' ' ')"
+files="$(docker exec "$name" find /usr/share/nginx/site -mindepth 1 -maxdepth 1 | sort | tr '\n' ' ')"
 echo "  conteúdo: $files"
 check "só o site dentro da imagem" \
-  '[ "$files" = "/usr/share/nginx/html/404.html /usr/share/nginx/html/assets /usr/share/nginx/html/index.html " ]'
+  '[ "$files" = "/usr/share/nginx/site/404.html /usr/share/nginx/site/assets /usr/share/nginx/site/index.html " ]'
 
 if [ "$failures" -gt 0 ]; then
   echo "$failures verificação(ões) falharam."
