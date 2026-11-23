@@ -29,7 +29,7 @@
   --shadow-md: 0 8px 24px rgba(17, 19, 23, 0.10);
 
   /* Tipografia */
-  --font-display: Archivo, system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 
