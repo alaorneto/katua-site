@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KATUÁ. — Software para a era da IA</title>
+  <meta name="description" content="A Katuá Tech desenvolve software com IA no centro do processo, com foco em quem usa e uma visão integrada de web, mobile e desktop. Conheça o Skeleton e o Medvita.">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111317" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="KATUÁ. — Software para a era da IA">
+  <meta property="og:description" content="Desenvolvimento acelerado por IA, com foco na experiência de quem usa. Conheça o Skeleton e o Medvita.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    try { var t = localStorage.getItem("katua-theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Símbolos reutilizados: logotipo oficial e ícones (Lucide, traço de 2px) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="logo" viewBox="0 -42 547.9 143.5">
+        <path fill="currentColor" d="M0.00,0.00 L30.00,0.00 L30.00,100.00 L0.00,100.00 Z M57.30,0.00 L96.00,0.00 L30.00,69.30 L30.00,28.70 Z M56.60,41.38 L100.00,100.00 L62.70,100.00 L30.00,55.90 Z M110.00,100.00 L148.00,0.00 L184.00,0.00 L222.00,100.00 Z M191.00,100.00 L183.40,80.00 L148.60,80.00 L141.00,100.00 Z M156.96,58.00 L175.04,58.00 L166.00,34.20 Z M204.60,0.00 L296.60,0.00 L296.60,28.00 L265.60,28.00 L265.60,100.00 L235.60,100.00 L235.60,28.00 L204.60,28.00 Z M306.60,0 H336.60 V52 A18,22 0 0 0 372.60,52 V0 H402.60 V52 A48,49.5 0 0 1 306.60,52 Z M397.90,100.00 L435.90,0.00 L471.90,0.00 L509.90,100.00 Z M478.90,100.00 L471.30,80.00 L436.50,80.00 L428.90,100.00 Z M444.86,58.00 L462.94,58.00 L453.90,34.20 Z M432.90,-12.00 L460.90,-12.00 L484.90,-42.00 L456.90,-42.00 Z"/>
+        <path fill="var(--azul)" d="M517.90,70.00 L547.90,70.00 L547.90,100.00 L517.90,100.00 Z"/>
+      </symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+      <symbol id="i-mouse" viewBox="0 0 24 24"><path d="M12.586 12.586 19 19"/><path d="M3.688 3.037a.497.497 0 0 0-.651.651l6.5 15.999a.501.501 0 0 0 .947-.062l1.569-6.083a2 2 0 0 1 1.448-1.479l6.124-1.579a.5.5 0 0 0 .063-.947z"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></symbol>
+      <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></symbol>
+      <symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="kt-nav">
+      <div class="kt-nav-inner">
+        <a class="kt-nav-home" href="#topo" aria-label="KATUÁ. — início">
+          <svg class="kt-logo" height="24" width="92" role="img" aria-label="KATUÁ."><use href="#logo"/></svg>
+        </a>
+        <nav class="kt-nav-links" aria-label="Principal">
+          <a class="kt-nav-link" href="#o-que-fazemos">O que fazemos</a>
+          <a class="kt-nav-link" href="#produtos">Produtos</a>
+          <a class="kt-nav-link" href="#como-trabalhamos">Como trabalhamos</a>
+          <a class="kt-nav-link" href="#contato">Contato</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+            <svg class="icon icon-sm icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+            <svg class="icon icon-sm icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          </button>
+          <a class="kt-btn kt-btn-primary kt-btn-sm" href="#contato">Fale com a gente</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="hero" id="topo" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="kt-st">
+          <div class="kt-eyebrow">Software para a era da IA</div>
+          <h1 class="hero-title" id="hero-title">
+            <span>Software rápido<span class="kt-period" aria-hidden="true">.</span></span>
+            <span>Experiência clara<span class="kt-period" aria-hidden="true">.</span></span>
+          </h1>
+          <p class="kt-lead">A Katuá Tech constrói sistemas com IA no centro do processo. Você recebe software que funciona na web, no celular e no computador, fácil de usar desde o primeiro dia.</p>
+          <div class="hero-actions">
+            <a class="kt-btn kt-btn-primary kt-btn-lg" href="#contato">Fale com a gente</a>
+            <a class="kt-btn kt-btn-secondary kt-btn-lg" href="#produtos">Conheça os produtos</a>
+          </div>
+          <div class="hero-note" aria-label="Plataformas">
+            <span><i class="dot" aria-hidden="true"></i>Web</span>
+            <span><i class="dot" aria-hidden="true"></i>Mobile</span>
+            <span><i class="dot" aria-hidden="true"></i>Desktop</span>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <!-- Ilustração: o mesmo sistema no navegador e no celular, e uma entrega publicada -->
+          <svg viewBox="0 0 560 480" role="img" aria-label="Ilustração de um mesmo sistema aberto no navegador e no celular, com um aviso de versão publicada.">
+            <!-- padrão de quadrados -->
+            <g class="il-line">
+              <rect x="400" y="0" width="8" height="8"/><rect x="432" y="0" width="8" height="8"/><rect x="464" y="0" width="8" height="8"/><rect x="496" y="0" width="8" height="8"/><rect x="528" y="0" width="8" height="8"/>
+              <rect x="400" y="32" width="8" height="8"/><rect x="432" y="32" width="8" height="8"/><rect x="496" y="32" width="8" height="8"/><rect x="528" y="32" width="8" height="8"/>
+              <rect x="400" y="64" width="8" height="8"/><rect x="432" y="64" width="8" height="8"/><rect x="464" y="64" width="8" height="8"/><rect x="496" y="64" width="8" height="8"/>
+              <rect x="400" y="96" width="8" height="8"/><rect x="464" y="96" width="8" height="8"/><rect x="496" y="96" width="8" height="8"/><rect x="528" y="96" width="8" height="8"/>
+            </g>
+            <g class="il-azul">
+              <rect x="464" y="32" width="8" height="8"/><rect x="528" y="64" width="8" height="8"/><rect x="432" y="96" width="8" height="8"/>
+            </g>
+
+            <!-- navegador -->
+            <g transform="translate(0 40)">
+              <rect x="0.5" y="0.5" width="460" height="320" rx="16" class="il-surface il-stroke"/>
+              <path d="M1 40H460" class="il-stroke"/>
+              <rect x="16" y="16" width="8" height="8" class="il-line"/><rect x="30" y="16" width="8" height="8" class="il-line"/><rect x="44" y="16" width="8" height="8" class="il-line"/>
+              <rect x="120" y="12" width="220" height="16" rx="4" class="il-alt"/>
+              <!-- menu lateral -->
+              <rect x="16" y="58" width="12" height="12" class="il-ink"/><rect x="34" y="61" width="44" height="6" rx="2" class="il-ink"/>
+              <rect x="10" y="84" width="96" height="22" rx="4" class="il-suave"/>
+              <rect x="18" y="90" width="10" height="10" rx="2" class="il-azul"/><rect x="34" y="92" width="52" height="6" rx="2" class="il-azul"/>
+              <rect x="18" y="116" width="10" height="10" rx="2" class="il-line"/><rect x="34" y="118" width="44" height="6" rx="2" class="il-line"/>
+              <rect x="18" y="140" width="10" height="10" rx="2" class="il-line"/><rect x="34" y="142" width="56" height="6" rx="2" class="il-line"/>
+              <rect x="18" y="164" width="10" height="10" rx="2" class="il-line"/><rect x="34" y="166" width="40" height="6" rx="2" class="il-line"/>
+              <rect x="18" y="188" width="10" height="10" rx="2" class="il-line"/><rect x="34" y="190" width="50" height="6" rx="2" class="il-line"/>
+              <path d="M116 40V320" class="il-stroke"/>
+              <!-- conteúdo -->
+              <rect x="132" y="58" width="150" height="12" rx="2" class="il-ink"/>
+              <rect x="132" y="78" width="200" height="6" rx="2" class="il-line"/>
+              <rect x="372" y="56" width="72" height="26" rx="6" class="il-azul"/><rect x="386" y="67" width="44" height="4" rx="2" class="il-on-azul"/>
+              <rect x="132" y="102" width="96" height="64" rx="8" class="il-alt"/>
+              <rect x="144" y="114" width="40" height="5" rx="2" class="il-line"/><rect x="144" y="132" width="48" height="12" rx="2" class="il-ink"/>
+              <rect x="240" y="102" width="96" height="64" rx="8" class="il-alt"/>
+              <rect x="252" y="114" width="40" height="5" rx="2" class="il-line"/><rect x="252" y="132" width="36" height="12" rx="2" class="il-ink"/>
+              <rect x="348" y="102" width="96" height="64" rx="8" class="il-alt"/>
+              <rect x="360" y="114" width="40" height="5" rx="2" class="il-line"/>
+              <path d="M360 152 L376 144 L390 148 L406 134 L432 128" class="il-icon il-icon-azul"/>
+              <rect x="132" y="182" width="312" height="20" rx="4" class="il-alt"/>
+              <g class="il-line">
+                <rect x="144" y="216" width="80" height="6" rx="2"/><rect x="256" y="216" width="56" height="6" rx="2"/>
+                <rect x="144" y="242" width="96" height="6" rx="2"/><rect x="256" y="242" width="48" height="6" rx="2"/>
+                <rect x="144" y="268" width="72" height="6" rx="2"/><rect x="256" y="268" width="60" height="6" rx="2"/>
+                <rect x="144" y="294" width="88" height="6" rx="2"/><rect x="256" y="294" width="52" height="6" rx="2"/>
+              </g>
+              <g>
+                <rect x="380" y="212" width="48" height="14" rx="4" class="il-suave"/><rect x="388" y="217" width="4" height="4" class="il-azul"/><rect x="396" y="217" width="24" height="4" rx="2" class="il-azul"/>
+                <rect x="380" y="238" width="48" height="14" rx="4" class="il-suave"/><rect x="388" y="243" width="4" height="4" class="il-azul"/><rect x="396" y="243" width="24" height="4" rx="2" class="il-azul"/>
+                <rect x="380" y="264" width="48" height="14" rx="4" class="il-alt"/><rect x="388" y="269" width="4" height="4" class="il-muted"/><rect x="396" y="269" width="24" height="4" rx="2" class="il-muted"/>
+                <rect x="380" y="290" width="48" height="14" rx="4" class="il-suave"/><rect x="388" y="295" width="4" height="4" class="il-azul"/><rect x="396" y="295" width="24" height="4" rx="2" class="il-azul"/>
+              </g>
+              <path d="M132 232H444M132 258H444M132 284H444" class="il-stroke"/>
+            </g>
+
+            <!-- celular -->
+            <g transform="translate(392 196)" class="il-shadow">
+              <rect x="0.75" y="0.75" width="150" height="272" rx="24" class="il-surface il-stroke-strong" stroke-width="1.5"/>
+              <rect x="55" y="12" width="40" height="6" rx="3" class="il-line"/>
+              <rect x="16" y="34" width="72" height="10" rx="2" class="il-ink"/>
+              <rect x="16" y="52" width="104" height="5" rx="2" class="il-line"/>
+              <rect x="16" y="70" width="118" height="48" rx="8" class="il-alt"/>
+              <rect x="26" y="84" width="20" height="20" rx="4" class="il-suave"/><rect x="33" y="91" width="6" height="6" class="il-azul"/>
+              <rect x="54" y="86" width="60" height="6" rx="2" class="il-ink"/><rect x="54" y="98" width="44" height="5" rx="2" class="il-line"/>
+              <rect x="16" y="126" width="118" height="48" rx="8" class="il-alt"/>
+              <rect x="26" y="140" width="20" height="20" rx="4" class="il-suave"/><rect x="33" y="147" width="6" height="6" class="il-azul"/>
+              <rect x="54" y="142" width="52" height="6" rx="2" class="il-ink"/><rect x="54" y="154" width="40" height="5" rx="2" class="il-line"/>
+              <rect x="16" y="182" width="118" height="48" rx="8" class="il-alt"/>
+              <rect x="26" y="196" width="20" height="20" rx="4" class="il-suave"/><rect x="33" y="203" width="6" height="6" class="il-azul"/>
+              <rect x="54" y="198" width="64" height="6" rx="2" class="il-ink"/><rect x="54" y="210" width="36" height="5" rx="2" class="il-line"/>
+              <rect x="16" y="238" width="118" height="24" rx="6" class="il-azul"/><rect x="51" y="248" width="48" height="4" rx="2" class="il-on-azul"/>
+            </g>
+
+            <!-- entrega publicada -->
+            <g transform="translate(24 360)" class="il-shadow">
+              <rect x="0.5" y="0.5" width="236" height="88" rx="12" class="il-surface il-stroke"/>
+              <rect x="16" y="16" width="24" height="24" rx="6" class="il-inverse"/>
+              <path d="M22 24l4 4-4 4M29 33h5" class="il-icon il-icon-inverse" stroke-width="1.75"/>
+              <text x="52" y="33" class="il-text-mono il-ink" font-size="13">deploy --prod</text>
+              <path d="M17 62l4 4 8-8" class="il-icon" style="stroke: var(--sucesso)"/>
+              <rect x="40" y="58" width="96" height="6" rx="2" class="il-line"/>
+              <rect x="144" y="58" width="40" height="6" rx="2" class="il-line"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que fazemos -->
+    <section class="section section-alt" id="o-que-fazemos" aria-labelledby="fazemos-title">
+      <div class="container">
+        <div class="kt-st section-head">
+          <div class="kt-eyebrow">O que fazemos</div>
+          <h2 class="kt-st-title kt-h1" id="fazemos-title">Do problema ao sistema no ar<span class="kt-period" aria-hidden="true">.</span></h2>
+          <p class="kt-lead">A gente desenha, constrói e mantém software sob medida. Três ideias guiam todo projeto.</p>
+        </div>
+        <div class="pillars">
+          <article class="kt-card">
+            <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span>
+            <h3 class="kt-card-title">Acelerado por IA</h3>
+            <div class="kt-card-body">A IA trabalha com a gente em cada etapa: entender o problema, escrever o código, testar e documentar. Você vê o sistema funcionando cedo e acompanha cada passo.</div>
+          </article>
+          <article class="kt-card">
+            <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-mouse"/></svg></span>
+            <h3 class="kt-card-title">Feito para quem usa</h3>
+            <div class="kt-card-body">Telas pensadas para quem passa o dia no sistema. Menos cliques, menos dúvida, acessível por teclado e legível em qualquer tela.</div>
+          </article>
+          <article class="kt-card">
+            <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
+            <h3 class="kt-card-title">Um sistema, todas as telas</h3>
+            <div class="kt-card-body">Web, celular e computador como um só produto: a mesma base, os mesmos dados e a mesma experiência em cada plataforma.</div>
+            <div class="platforms">
+              <span class="kt-badge kt-badge-neutro">Web</span>
+              <span class="kt-badge kt-badge-neutro">Mobile</span>
+              <span class="kt-badge kt-badge-neutro">Desktop</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produtos -->
+    <section class="section" id="produtos" aria-labelledby="produtos-title">
+      <div class="container">
+        <div class="kt-st section-head">
+          <div class="kt-eyebrow">Produtos</div>
+          <h2 class="kt-st-title kt-h1" id="produtos-title">Dois produtos, uma base<span class="kt-period" aria-hidden="true">.</span></h2>
+          <p class="kt-lead">O Skeleton é a fundação aberta que usamos em tudo. O Medvita é o primeiro sistema completo construído sobre ela.</p>
+        </div>
+
+        <!-- Skeleton -->
+        <article class="product" id="skeleton" aria-labelledby="skeleton-title">
+          <div class="product-art">
+            <svg viewBox="0 0 520 420" role="img" aria-label="Ilustração da arquitetura do Skeleton: suas apps no topo; no meio, os módulos de identidade, organizações, acesso, auditoria, API e notificações; na base, o PostgreSQL com os dados separados por organização.">
+              <!-- suas apps -->
+              <rect x="1" y="1" width="518" height="100" rx="12" fill="none" class="il-stroke-azul" stroke-width="1.5" stroke-dasharray="6 6"/>
+              <text x="20" y="28" class="il-text il-muted" font-size="13">Suas apps</text>
+              <rect x="20" y="44" width="152" height="40" rx="8" class="il-suave"/>
+              <rect x="34" y="60" width="8" height="8" class="il-azul"/><text x="52" y="69" class="il-text il-azul" font-size="13">Agenda</text>
+              <rect x="184" y="44" width="152" height="40" rx="8" class="il-suave"/>
+              <rect x="198" y="60" width="8" height="8" class="il-azul"/><text x="216" y="69" class="il-text il-azul" font-size="13">Livro contábil</text>
+              <rect x="348" y="44" width="152" height="40" rx="8" class="il-suave"/>
+              <rect x="362" y="60" width="8" height="8" class="il-azul"/><text x="380" y="69" class="il-text il-azul" font-size="13">Sua app</text>
+              <path d="M96 102V120M260 102V120M424 102V120" class="il-stroke-strong" stroke-dasharray="3 3"/>
+
+              <!-- núcleo -->
+              <rect x="1" y="121" width="518" height="212" rx="12" class="il-surface il-stroke"/>
+              <text x="20" y="148" class="il-text-mono il-ink" font-size="13">skeleton</text>
+              <text x="500" y="148" text-anchor="end" class="il-text-mono il-muted" font-size="12">Django · Python</text>
+              <g>
+                <rect x="20" y="164" width="152" height="64" rx="8" class="il-alt"/>
+                <svg x="34" y="184" width="24" height="24" class="il-icon il-icon-azul"><use href="#i-user"/></svg>
+                <text x="68" y="201" class="il-text il-ink" font-size="13">Identidade</text>
+                <rect x="184" y="164" width="152" height="64" rx="8" class="il-alt"/>
+                <svg x="198" y="184" width="24" height="24" class="il-icon il-icon-azul"><use href="#i-building"/></svg>
+                <text x="232" y="201" class="il-text il-ink" font-size="13">Organizações</text>
+                <rect x="348" y="164" width="152" height="64" rx="8" class="il-alt"/>
+                <svg x="362" y="184" width="24" height="24" class="il-icon il-icon-azul"><use href="#i-shield"/></svg>
+                <text x="396" y="201" class="il-text il-ink" font-size="13">Acesso</text>
+                <rect x="20" y="240" width="152" height="64" rx="8" class="il-alt"/>
+                <svg x="34" y="260" width="24" height="24" class="il-icon il-icon-azul"><use href="#i-history"/></svg>
+                <text x="68" y="277" class="il-text il-ink" font-size="13">Auditoria</text>
+                <rect x="184" y="240" width="152" height="64" rx="8" class="il-alt"/>
+                <svg x="198" y="260" width="24" height="24" class="il-icon il-icon-azul"><use href="#i-code"/></svg>
+                <text x="232" y="277" class="il-text il-ink" font-size="13">API</text>
+                <rect x="348" y="240" width="152" height="64" rx="8" class="il-alt"/>
+                <svg x="362" y="260" width="24" height="24" class="il-icon il-icon-azul"><use href="#i-bell"/></svg>
+                <text x="396" y="277" class="il-text il-ink" font-size="13">Notificações</text>
+              </g>
+
+              <!-- banco -->
+              <rect x="1" y="353" width="518" height="64" rx="12" class="il-inverse"/>
+              <svg x="20" y="373" width="24" height="24" class="il-icon il-icon-inverse"><use href="#i-db"/></svg>
+              <text x="56" y="382" class="il-text il-on-inverse" font-size="14">PostgreSQL</text>
+              <text x="56" y="400" class="il-on-inverse" font-size="12" style="font-family: var(--font-sans)">dados separados por organização</text>
+              <rect x="420" y="375" width="20" height="20" class="il-azul"/>
+              <rect x="448.75" y="375.75" width="18.5" height="18.5" fill="none" class="il-icon-inverse" stroke-width="1.5"/>
+              <rect x="476.75" y="375.75" width="18.5" height="18.5" fill="none" class="il-icon-inverse" stroke-width="1.5"/>
+            </svg>
+          </div>
+
+          <div class="product-copy">
+            <div class="product-tags">
+              <span class="kt-badge kt-badge-azul">Open source</span>
+              <span class="kt-badge kt-badge-neutro">Django · PostgreSQL</span>
+            </div>
+            <h3 class="product-name" id="skeleton-title">Skeleton</h3>
+            <p class="product-tagline">A base pronta para sistemas com várias empresas<span class="kt-period" aria-hidden="true">.</span></p>
+            <p class="product-body">Login, organizações, permissões e auditoria já resolvidos. O Skeleton cuida da infraestrutura que todo sistema multiempresa precisa, e o seu projeto cuida só das regras do negócio.</p>
+            <ul class="features">
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-user"/></svg>Login com senha, SSO e MFA</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-building"/></svg>Dados de cada organização isolados no banco</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-shield"/></svg>Controle de acesso por registro</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-history"/></svg>Auditoria e histórico de cada mudança</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-code"/></svg>API com tokens e contas de serviço</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-package"/></svg>Apps em pacotes assinados, ativadas por organização</li>
+            </ul>
+            <div class="product-actions">
+              <a class="kt-btn kt-btn-primary kt-btn-md" href="https://github.com/alaorneto/skeleton" rel="noopener">
+                Ver no GitHub <svg class="icon icon-sm" aria-hidden="true"><use href="#i-external"/></svg>
+              </a>
+              <a class="kt-btn kt-btn-ghost kt-btn-md" href="#contato">Usar o Skeleton no seu projeto</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Medvita -->
+        <article class="product product-reverse" id="medvita" aria-labelledby="medvita-title">
+          <div class="product-art">
+            <svg viewBox="0 0 540 450" role="img" aria-label="Ilustração do Medvita: a agenda do dia com três profissionais, consultas confirmadas e horários livres, e a secretária virtual marcando uma consulta pela conversa.">
+              <defs>
+                <clipPath id="mv-window"><rect x="1" y="1" width="500" height="360" rx="14"/></clipPath>
+              </defs>
+              <g clip-path="url(#mv-window)">
+                <rect x="1" y="1" width="500" height="360" class="il-surface"/>
+                <rect x="121" y="45" width="380" height="316" class="il-alt"/>
+              </g>
+              <rect x="1" y="1" width="500" height="360" rx="14" fill="none" class="il-stroke"/>
+              <!-- barra superior -->
+              <path d="M1 45H501" class="il-stroke"/>
+              <text x="20" y="29" class="il-text mv-ink-primary" font-size="16">Medvita</text>
+              <rect x="318.5" y="13.5" width="64" height="20" rx="6" fill="none" class="il-stroke"/>
+              <rect x="330" y="21" width="40" height="5" rx="2" class="il-line"/>
+              <rect x="390.5" y="13.5" width="64" height="20" rx="6" fill="none" class="il-stroke"/>
+              <rect x="402" y="21" width="40" height="5" rx="2" class="il-line"/>
+              <circle cx="478" cy="23" r="11" class="mv-blue-soft"/>
+              <!-- menu lateral -->
+              <path d="M121 45V361" class="il-stroke"/>
+              <rect x="16" y="62" width="44" height="5" rx="2" class="il-line"/>
+              <g class="il-line">
+                <rect x="16" y="80" width="10" height="10" rx="2"/><rect x="32" y="82" width="52" height="6" rx="2"/>
+                <rect x="16" y="104" width="10" height="10" rx="2"/><rect x="32" y="106" width="44" height="6" rx="2"/>
+                <rect x="16" y="128" width="10" height="10" rx="2"/><rect x="32" y="130" width="60" height="6" rx="2"/>
+              </g>
+              <rect x="8" y="146" width="106" height="24" rx="4" class="mv-blue-soft"/>
+              <rect x="16" y="153" width="10" height="10" rx="2" class="mv-blue"/><rect x="32" y="155" width="64" height="6" rx="2" class="mv-ink-primary"/>
+              <g class="il-line">
+                <rect x="16" y="180" width="10" height="10" rx="2"/><rect x="32" y="182" width="40" height="6" rx="2"/>
+                <rect x="16" y="204" width="10" height="10" rx="2"/><rect x="32" y="206" width="56" height="6" rx="2"/>
+                <rect x="16" y="236" width="44" height="5" rx="2"/>
+                <rect x="16" y="254" width="10" height="10" rx="2"/><rect x="32" y="256" width="48" height="6" rx="2"/>
+                <rect x="16" y="278" width="10" height="10" rx="2"/><rect x="32" y="280" width="40" height="6" rx="2"/>
+                <rect x="16" y="302" width="10" height="10" rx="2"/><rect x="32" y="304" width="54" height="6" rx="2"/>
+              </g>
+              <!-- cabeçalho da página -->
+              <text x="137" y="80" class="il-text il-ink" font-size="17">Agenda de hoje</text>
+              <rect x="137" y="90" width="150" height="5" rx="2" class="il-line"/>
+              <rect x="405" y="64" width="80" height="28" rx="6" class="mv-blue"/>
+              <text x="445" y="82" text-anchor="middle" class="il-text mv-on-primary" font-size="12">Marcar</text>
+              <g class="il-line">
+                <rect x="137" y="110" width="26" height="5" rx="2"/><rect x="177" y="110" width="40" height="5" rx="2"/><rect x="231" y="110" width="32" height="5" rx="2"/><rect x="277" y="110" width="44" height="5" rx="2"/>
+              </g>
+              <rect x="137" y="121" width="26" height="2" class="mv-blue"/>
+              <path d="M137 123.5H485" class="il-stroke"/>
+
+              <!-- cartões de agenda -->
+              <g transform="translate(137 138)">
+                <rect x="0.5" y="0.5" width="108" height="150" rx="8" class="il-surface il-stroke"/>
+                <rect x="12" y="14" width="72" height="7" rx="2" class="mv-ink-primary"/>
+                <rect x="12" y="30" width="2" height="38" class="il-line"/>
+                <text x="20" y="40" class="il-text-mono mv-ink-primary" font-size="11">09:30</text>
+                <rect x="20" y="46" width="62" height="5" rx="2" class="il-line"/>
+                <rect x="20" y="56" width="40" height="12" rx="6" class="il-alt"/><circle cx="27" cy="62" r="2.5" class="mv-green"/><rect x="33" y="60" width="22" height="4" rx="2" class="il-muted"/>
+                <rect x="12" y="82" width="50" height="5" rx="2" class="il-line"/>
+                <g class="il-alt il-stroke">
+                  <rect x="12.5" y="94.5" width="24" height="12" rx="3"/><rect x="42.5" y="94.5" width="24" height="12" rx="3"/><rect x="72.5" y="94.5" width="24" height="12" rx="3"/>
+                  <rect x="12.5" y="112.5" width="24" height="12" rx="3"/><rect x="42.5" y="112.5" width="24" height="12" rx="3"/>
+                </g>
+              </g>
+              <g transform="translate(257 138)">
+                <rect x="0.5" y="0.5" width="108" height="150" rx="8" class="il-surface il-stroke"/>
+                <rect x="12" y="14" width="80" height="7" rx="2" class="mv-ink-primary"/>
+                <rect x="12" y="30" width="2" height="38" class="il-line"/>
+                <text x="20" y="40" class="il-text-mono mv-ink-primary" font-size="11">11:00</text>
+                <rect x="20" y="46" width="56" height="5" rx="2" class="il-line"/>
+                <rect x="20" y="56" width="40" height="12" rx="6" class="il-alt"/><circle cx="27" cy="62" r="2.5" class="mv-green"/><rect x="33" y="60" width="22" height="4" rx="2" class="il-muted"/>
+                <rect x="64.5" y="56.5" width="30" height="11" rx="3" fill="none" class="mv-stroke-warning"/><rect x="70" y="60" width="19" height="4" rx="2" class="mv-ink-warning"/>
+                <rect x="12" y="82" width="50" height="5" rx="2" class="il-line"/>
+                <g class="il-alt il-stroke">
+                  <rect x="12.5" y="94.5" width="24" height="12" rx="3"/><rect x="72.5" y="94.5" width="24" height="12" rx="3"/>
+                  <rect x="12.5" y="112.5" width="24" height="12" rx="3"/><rect x="42.5" y="112.5" width="24" height="12" rx="3"/><rect x="72.5" y="112.5" width="24" height="12" rx="3"/>
+                </g>
+                <rect x="42" y="94" width="25" height="13" rx="3" class="mv-blue"/>
+              </g>
+              <g transform="translate(377 138)">
+                <rect x="0.5" y="0.5" width="108" height="150" rx="8" class="il-surface il-stroke"/>
+                <rect x="12" y="14" width="66" height="7" rx="2" class="mv-ink-primary"/>
+                <rect x="12" y="30" width="2" height="38" class="mv-petrol"/>
+                <text x="20" y="40" class="il-text-mono mv-ink-primary" font-size="11">14:30</text>
+                <rect x="20" y="46" width="64" height="5" rx="2" class="il-line"/>
+                <rect x="20" y="56" width="20" height="12" rx="6" class="mv-petrol"/><text x="30" y="65" text-anchor="middle" class="il-text mv-on-petrol" font-size="8">IA</text>
+                <rect x="44" y="56" width="40" height="12" rx="6" class="il-alt"/><circle cx="51" cy="62" r="2.5" class="mv-green"/><rect x="57" y="60" width="22" height="4" rx="2" class="il-muted"/>
+                <rect x="12" y="82" width="50" height="5" rx="2" class="il-line"/>
+                <g class="il-alt il-stroke">
+                  <rect x="12.5" y="94.5" width="24" height="12" rx="3"/><rect x="42.5" y="94.5" width="24" height="12" rx="3"/><rect x="72.5" y="94.5" width="24" height="12" rx="3"/>
+                  <rect x="12.5" y="112.5" width="24" height="12" rx="3"/>
+                </g>
+              </g>
+
+              <!-- secretária virtual -->
+              <g transform="translate(292 290)" class="il-shadow">
+                <rect x="0.5" y="0.5" width="240" height="152" rx="16" class="il-surface il-stroke"/>
+                <rect x="16" y="16" width="28" height="18" rx="9" class="mv-petrol"/>
+                <text x="30" y="29" text-anchor="middle" class="il-text mv-on-petrol" font-size="11">IA</text>
+                <text x="54" y="29" class="il-text mv-petrol" font-size="12">Secretária virtual</text>
+                <rect x="16" y="44" width="176" height="26" rx="8" class="il-alt"/>
+                <text x="26" y="61" class="il-ink" font-size="11" style="font-family: var(--font-sans)">Tem horário amanhã à tarde?</text>
+                <rect x="40" y="78" width="184" height="26" rx="8" class="mv-petrol-soft"/>
+                <text x="50" y="95" class="il-ink" font-size="11" style="font-family: var(--font-sans)">Tenho às 14:30. Posso marcar?</text>
+                <rect x="16.75" y="114.75" width="140" height="22" rx="11" fill="none" class="mv-stroke-success" stroke-width="1.5"/>
+                <path d="M27 126l3 3 6-6" class="il-icon mv-stroke-success" stroke-width="1.75"/>
+                <text x="43" y="130" class="il-text mv-ink-success" font-size="11">Consulta marcada</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="product-copy">
+            <div class="product-tags">
+              <span class="kt-badge kt-badge-azul">Gestão de clínicas</span>
+              <span class="kt-badge kt-badge-neutro">Web e Windows</span>
+            </div>
+            <h3 class="product-name" id="medvita-title">Medvita</h3>
+            <p class="product-tagline">A clínica inteira numa tela só<span class="kt-period" aria-hidden="true">.</span></p>
+            <p class="product-body">Agenda, pacientes, prontuário e financeiro para consultórios e pequenas clínicas. Uma secretária virtual conversa com o paciente e marca a consulta, sempre identificada como IA.</p>
+            <ul class="features">
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>Agenda por profissional, com encaixes e lista de espera</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-user"/></svg>Cadastro de pacientes com busca rápida</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-file"/></svg>Prontuário eletrônico</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-wallet"/></svg>Financeiro integrado à agenda</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-message"/></svg>Secretária virtual que marca consultas</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-monitor"/></svg>No navegador e no aplicativo para Windows</li>
+            </ul>
+            <div class="product-actions">
+              <a class="kt-btn kt-btn-primary kt-btn-md" href="#contato">Quero conhecer o Medvita</a>
+              <a class="kt-btn kt-btn-ghost kt-btn-md" href="#skeleton">Construído sobre o Skeleton</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Como trabalhamos -->
+    <section class="section section-alt" id="como-trabalhamos" aria-labelledby="como-title">
+      <div class="container">
+        <div class="kt-st section-head">
+          <div class="kt-eyebrow">Como trabalhamos</div>
+          <h2 class="kt-st-title kt-h1" id="como-title">Entregas pequenas, sempre visíveis<span class="kt-period" aria-hidden="true">.</span></h2>
+          <p class="kt-lead">Você acompanha o sistema crescendo, versão por versão. Cada mudança tem registro, revisão e teste.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>Entender</h3>
+            <p>Conversamos com quem vai usar o sistema e transformamos o problema em uma lista clara de entregas.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>Prototipar</h3>
+            <p>Você vê e testa as telas antes do código. Ajustar um protótipo custa minutos.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>Construir</h3>
+            <p>A IA acelera a escrita e os testes. Pessoas revisam e aprovam cada mudança antes de ela entrar.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">04</span>
+            <h3>Evoluir</h3>
+            <p>Cada versão sai com notas do que mudou. O sistema cresce com o seu negócio, sem recomeçar do zero.</p>
+          </li>
+        </ol>
+        <p class="flow" aria-label="Fluxo de cada mudança: issue, branch, pull request, revisão e versão">
+          <b>issue</b><span class="arrow" aria-hidden="true">→</span><b>branch</b><span class="arrow" aria-hidden="true">→</span><b>pull request</b><span class="arrow" aria-hidden="true">→</span><b>revisão</b><span class="arrow" aria-hidden="true">→</span><b>versão</b>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- CTA final e rodapé (faixa invertida) -->
+  <div class="inverse">
+    <section class="cta" id="contato" aria-labelledby="contato-title">
+      <div class="cta-squares" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="container cta-grid">
+        <div class="kt-st">
+          <div class="kt-eyebrow">Contato</div>
+          <h2 class="kt-st-title kt-h1" id="contato-title">Vamos construir o seu sistema<span class="kt-period" aria-hidden="true">.</span></h2>
+          <p class="kt-lead">Conte o que você precisa: um sistema novo, um produto sobre o Skeleton ou o Medvita na sua clínica. A gente responde com os próximos passos.</p>
+        </div>
+        <div class="cta-actions">
+          <!-- PENDENTE: confirmar o e-mail de contato oficial antes de publicar -->
+          <a class="kt-btn kt-btn-primary kt-btn-lg" href="mailto:contato@katua.tech?subject=Quero%20falar%20com%20a%20Katu%C3%A1">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg> Fale com a gente
+          </a>
+          <span class="cta-mail">contato@katua.tech</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <svg class="kt-logo" height="28" width="107" role="img" aria-label="KATUÁ."><use href="#logo"/></svg>
+            <p>Desenvolvimento de software para a era da IA. Web, mobile e desktop como um só sistema.</p>
+          </div>
+          <nav class="footer-col" aria-labelledby="rodape-produtos">
+            <h2 id="rodape-produtos">Produtos</h2>
+            <ul>
+              <li><a href="#skeleton">Skeleton</a></li>
+              <li><a href="#medvita">Medvita</a></li>
+              <li><a href="https://github.com/alaorneto/skeleton" rel="noopener">Skeleton no GitHub</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-col" aria-labelledby="rodape-empresa">
+            <h2 id="rodape-empresa">Empresa</h2>
+            <ul>
+              <li><a href="#o-que-fazemos">O que fazemos</a></li>
+              <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Katuá Tech. Todos os direitos reservados.</span>
+          <span>Feito com IA e revisado por pessoas.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/theme.js" defer></script>
+</body>
+</html>
