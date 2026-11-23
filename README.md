@@ -78,7 +78,6 @@ O site segue o design system **KATUÁ.**: tokens semânticos em vez de HEX, tít
 
 ## Pendências antes de publicar
 
-- Confirmar o e-mail de contato (`contato@katua.tech` é provisório) em `index.html`.
 - Imagem de compartilhamento (`og:image`) e domínio definitivo.
 - Conferir o que o texto do Medvita promete: a secretária virtual e o aplicativo para Windows (hoje descrito como "a caminho").
 - O repositório do Skeleton não tem arquivo de licença; o site o chama de open source.
