@@ -2,6 +2,12 @@
 
 Todas as mudanças publicadas deste projeto. Este arquivo é escrito pela automação de release; não edite as seções de versão à mão.
 
+## [0.4.0](https://github.com/alaorneto/katua-site/compare/v0.3.0...v0.4.0) — 2026-11-23
+
+### Melhorias
+
+- Trocar a fonte dos títulos para Space Grotesk ([#10](https://github.com/alaorneto/katua-site/issues/10)) — PR [#11](https://github.com/alaorneto/katua-site/pull/11)
+
 ## [0.3.0](https://github.com/alaorneto/katua-site/compare/v0.2.0...v0.3.0) — 2026-11-23
 
 ### Melhorias
