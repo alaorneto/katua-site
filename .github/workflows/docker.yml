@@ -1,0 +1,37 @@
+# Constrói e testa a imagem Docker do site em cada PR e em cada push na main.
+# A publicação no registro fica com docker-publish.yml, disparado pela release.
+name: Imagem Docker
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Construir e testar a imagem
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Construir
+        env:
+          REVISION: ${{ github.sha }}
+        run: docker build --build-arg VERSION=ci --build-arg "REVISION=$REVISION" -t katua-site:ci .
+
+      - name: Testar
+        run: bash docker/smoke-test.sh katua-site:ci
+
+      - name: Tamanho
+        run: |
+          docker image ls katua-site:ci --format 'Tamanho da imagem: {{.Size}}' | tee -a "$GITHUB_STEP_SUMMARY"

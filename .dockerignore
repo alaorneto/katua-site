@@ -1,0 +1,7 @@
+# Lista de permissão: só o site e a configuração do nginx entram no contexto do build.
+*
+!index.html
+!404.html
+!assets/
+!docker/nginx.conf
+!docker/security-headers.conf
