@@ -139,4 +139,4 @@ commit_message = "chore(release): {tag}"
 # Como marcar PRs e issues incluídos numa versão.
 mark = ["comment", "milestone"]
 # Workflow a disparar depois da release (por exemplo "publish.yml"), com os inputs version e tag.
-dispatch_workflow = ""
+dispatch_workflow = "docker-publish.yml"
