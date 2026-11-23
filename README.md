@@ -20,7 +20,7 @@ Depois, <http://localhost:8765>. Qualquer hospedagem estática serve o site como
 | `assets/css/tokens.css` | Tokens do design system KATUÁ. (cores claro/escuro, tipografia, espaçamento, raios) |
 | `assets/css/components.css` | Classes `kt-*` do design system (botão, badge, título de seção, cartão, navbar) |
 | `assets/css/site.css` | Layout das seções e cores das ilustrações |
-| `assets/js/theme.js` | Botão de tema claro/escuro; sem escolha, segue o sistema |
+| `assets/js/site.js` | Tema claro/escuro (sem escolha, segue o sistema), menu no celular e link da seção atual no cabeçalho |
 | `assets/img/` | Favicon e logotipos oficiais (positivo e negativo) |
 
 ## Marca
@@ -31,6 +31,8 @@ O site segue o design system **KATUÁ.**: tokens semânticos em vez de HEX, tít
 
 - Confirmar o e-mail de contato (`contato@katua.tech` é provisório) em `index.html`.
 - Imagem de compartilhamento (`og:image`) e domínio definitivo.
+- Conferir o que o texto do Medvita promete: a secretária virtual e o aplicativo para Windows (hoje descrito como "a caminho").
+- O repositório do Skeleton não tem arquivo de licença; o site o chama de open source.
 
 ## Fluxo de trabalho
 

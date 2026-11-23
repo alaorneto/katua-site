@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KATUÁ. — Software para a era da IA</title>
-  <meta name="description" content="A Katuá Tech desenvolve software com IA no centro do processo, com foco em quem usa e uma visão integrada de web, mobile e desktop. Conheça o Skeleton e o Medvita.">
+  <meta name="description" content="A Katuá Tech constrói sistemas sob medida com IA em cada etapa, para web, celular e computador. Conheça o Skeleton, a base open source, e o Medvita, o sistema de gestão de clínicas.">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#111317" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="KATUÁ. — Software para a era da IA">
-  <meta property="og:description" content="Desenvolvimento acelerado por IA, com foco na experiência de quem usa. Conheça o Skeleton e o Medvita.">
+  <meta property="og:description" content="Sistemas sob medida, construídos com IA em cada etapa. Conheça o Skeleton e o Medvita.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <script>
+    document.documentElement.classList.add("js");
     try { var t = localStorage.getItem("katua-theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,27 +55,33 @@
       <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
       <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
       <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
     </defs>
   </svg>
 
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="kt-nav">
       <div class="kt-nav-inner">
         <a class="kt-nav-home" href="#topo" aria-label="KATUÁ. — início">
           <svg class="kt-logo" height="24" width="92" role="img" aria-label="KATUÁ."><use href="#logo"/></svg>
         </a>
-        <nav class="kt-nav-links" aria-label="Principal">
+        <nav class="kt-nav-links" id="menu" aria-label="Principal">
           <a class="kt-nav-link" href="#o-que-fazemos">O que fazemos</a>
           <a class="kt-nav-link" href="#produtos">Produtos</a>
           <a class="kt-nav-link" href="#como-trabalhamos">Como trabalhamos</a>
           <a class="kt-nav-link" href="#contato">Contato</a>
         </nav>
         <div class="nav-actions">
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+          <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
             <svg class="icon icon-sm icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
             <svg class="icon icon-sm icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
           </button>
-          <a class="kt-btn kt-btn-primary kt-btn-sm" href="#contato">Fale com a gente</a>
+          <a class="kt-btn kt-btn-primary kt-btn-sm nav-cta" href="#contato">Fale com a gente</a>
+          <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+            <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+            <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -83,17 +90,18 @@
   <main id="conteudo">
     <!-- Hero -->
     <section class="hero" id="topo" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="kt-st">
+      <div class="container">
+      <div class="hero-grid">
+        <div class="kt-st hero-copy">
           <div class="kt-eyebrow">Software para a era da IA</div>
           <h1 class="hero-title" id="hero-title">
             <span>Software rápido<span class="kt-period" aria-hidden="true">.</span></span>
             <span>Experiência clara<span class="kt-period" aria-hidden="true">.</span></span>
           </h1>
-          <p class="kt-lead">A Katuá Tech constrói sistemas com IA no centro do processo. Você recebe software que funciona na web, no celular e no computador, fácil de usar desde o primeiro dia.</p>
+          <p class="kt-lead">A gente constrói sistemas sob medida, com IA em cada etapa. Você vê o sistema funcionando cedo, e quem usa não precisa de manual.</p>
           <div class="hero-actions">
-            <a class="kt-btn kt-btn-primary kt-btn-lg" href="#contato">Fale com a gente</a>
-            <a class="kt-btn kt-btn-secondary kt-btn-lg" href="#produtos">Conheça os produtos</a>
+            <a class="kt-btn kt-btn-primary kt-btn-lg" href="#contato">Fale com a gente <svg class="icon icon-sm icon-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="kt-btn kt-btn-secondary kt-btn-lg" href="#como-trabalhamos">Veja como trabalhamos</a>
           </div>
           <div class="hero-note" aria-label="Plataformas">
             <span><i class="dot" aria-hidden="true"></i>Web</span>
@@ -189,38 +197,67 @@
           </svg>
         </div>
       </div>
+
+      <div class="hero-products">
+        <div class="hero-products-label"><span class="kt-eyebrow">Nossos produtos</span></div>
+        <div class="teasers">
+          <a class="teaser" href="#skeleton">
+            <span class="teaser-body">
+              <span class="kt-eyebrow">Open source</span>
+              <span class="teaser-name">Skeleton</span>
+              <span class="teaser-text">A base em Django para sistemas com várias organizações.</span>
+            </span>
+            <span class="teaser-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="teaser" href="#medvita">
+            <span class="teaser-body">
+              <span class="kt-eyebrow">Gestão de clínicas</span>
+              <span class="teaser-name">Medvita</span>
+              <span class="teaser-text">Agenda, pacientes, prontuário e financeiro da sua clínica.</span>
+            </span>
+            <span class="teaser-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+      </div>
     </section>
 
     <!-- O que fazemos -->
-    <section class="section section-alt" id="o-que-fazemos" aria-labelledby="fazemos-title">
-      <div class="container">
-        <div class="kt-st section-head">
+    <section class="section inverse" id="o-que-fazemos" aria-labelledby="fazemos-title">
+      <div class="container pillars-grid">
+        <div class="kt-st pillars-head">
           <div class="kt-eyebrow">O que fazemos</div>
           <h2 class="kt-st-title kt-h1" id="fazemos-title">Do problema ao sistema no ar<span class="kt-period" aria-hidden="true">.</span></h2>
-          <p class="kt-lead">A gente desenha, constrói e mantém software sob medida. Três ideias guiam todo projeto.</p>
+          <p class="kt-lead">A gente desenha, constrói e mantém software sob medida. Três compromissos valem em todo projeto.</p>
         </div>
-        <div class="pillars">
-          <article class="kt-card">
+        <ul class="pillar-list">
+          <li class="pillar">
             <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span>
-            <h3 class="kt-card-title">Acelerado por IA</h3>
-            <div class="kt-card-body">A IA trabalha com a gente em cada etapa: entender o problema, escrever o código, testar e documentar. Você vê o sistema funcionando cedo e acompanha cada passo.</div>
-          </article>
-          <article class="kt-card">
-            <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-mouse"/></svg></span>
-            <h3 class="kt-card-title">Feito para quem usa</h3>
-            <div class="kt-card-body">Telas pensadas para quem passa o dia no sistema. Menos cliques, menos dúvida, acessível por teclado e legível em qualquer tela.</div>
-          </article>
-          <article class="kt-card">
-            <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
-            <h3 class="kt-card-title">Um sistema, todas as telas</h3>
-            <div class="kt-card-body">Navegador, celular ou computador: você escolhe onde usar. Os dados são os mesmos e as telas seguem o mesmo padrão em todos eles.</div>
-            <div class="platforms">
-              <span class="kt-badge kt-badge-neutro">Web</span>
-              <span class="kt-badge kt-badge-neutro">Mobile</span>
-              <span class="kt-badge kt-badge-neutro">Desktop</span>
+            <div>
+              <h3>Acelerado por IA</h3>
+              <p>A IA entra em cada etapa: entender o problema, escrever o código, testar e documentar. Pessoas decidem e revisam. Você vê o sistema funcionando desde as primeiras entregas.</p>
             </div>
-          </article>
-        </div>
+          </li>
+          <li class="pillar">
+            <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-mouse"/></svg></span>
+            <div>
+              <h3>Feito para quem usa</h3>
+              <p>Telas desenhadas para quem passa o dia nelas. Menos cliques, textos claros e tudo ao alcance do teclado.</p>
+            </div>
+          </li>
+          <li class="pillar">
+            <span class="pillar-icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
+            <div>
+              <h3>Um sistema, todas as telas</h3>
+              <p>Navegador, celular ou computador: você escolhe onde usar. Os dados são os mesmos e as telas seguem o mesmo padrão em todos eles.</p>
+              <div class="platforms">
+                <span class="kt-badge kt-badge-neutro">Web</span>
+                <span class="kt-badge kt-badge-neutro">Mobile</span>
+                <span class="kt-badge kt-badge-neutro">Desktop</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -230,7 +267,7 @@
         <div class="kt-st section-head">
           <div class="kt-eyebrow">Produtos</div>
           <h2 class="kt-st-title kt-h1" id="produtos-title">Dois produtos, uma base<span class="kt-period" aria-hidden="true">.</span></h2>
-          <p class="kt-lead">O Skeleton é a fundação aberta que usamos em tudo. O Medvita é o primeiro sistema completo construído sobre ela.</p>
+          <p class="kt-lead">O Skeleton é a base aberta de tudo o que a gente constrói. O Medvita é o primeiro sistema completo feito sobre ela.</p>
         </div>
 
         <!-- Skeleton -->
@@ -290,21 +327,22 @@
               <span class="kt-badge kt-badge-neutro">Django · PostgreSQL</span>
             </div>
             <h3 class="product-name" id="skeleton-title">Skeleton</h3>
-            <p class="product-tagline">A base pronta para sistemas com várias empresas<span class="kt-period" aria-hidden="true">.</span></p>
-            <p class="product-body">Login, organizações, permissões e auditoria já resolvidos. O Skeleton cuida da infraestrutura que todo sistema multiempresa precisa, e o seu projeto cuida só das regras do negócio.</p>
+            <p class="product-tagline">A fundação pronta para sistemas com várias organizações<span class="kt-period" aria-hidden="true">.</span></p>
+            <p class="product-body">Login, organizações, permissões e auditoria prontos e testados. O Skeleton resolve o que todo sistema multiempresa precisa, e o seu projeto começa direto nas regras do negócio.</p>
             <ul class="features">
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-user"/></svg>Login com senha, SSO e MFA</li>
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-building"/></svg>Dados de cada organização isolados no banco</li>
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-shield"/></svg>Controle de acesso por registro</li>
-              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-history"/></svg>Auditoria e histórico de cada mudança</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-history"/></svg>Histórico de cada mudança, com auditoria</li>
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-code"/></svg>API com tokens e contas de serviço</li>
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-package"/></svg>Apps em pacotes assinados, ativadas por organização</li>
             </ul>
+            <div class="code-line" role="group" aria-label="Comando para baixar o Skeleton"><span class="prompt" aria-hidden="true">$</span><span>git clone https://github.com/alaorneto/skeleton.git</span></div>
             <div class="product-actions">
               <a class="kt-btn kt-btn-primary kt-btn-md" href="https://github.com/alaorneto/skeleton" rel="noopener">
                 Ver no GitHub <svg class="icon icon-sm" aria-hidden="true"><use href="#i-external"/></svg>
               </a>
-              <a class="kt-btn kt-btn-ghost kt-btn-md" href="#contato">Usar o Skeleton no seu projeto</a>
+              <a class="kt-btn kt-btn-ghost kt-btn-md" href="#contato">Construir sobre o Skeleton</a>
             </div>
           </div>
         </article>
@@ -422,22 +460,21 @@
           <div class="product-copy">
             <div class="product-tags">
               <span class="kt-badge kt-badge-azul">Gestão de clínicas</span>
-              <span class="kt-badge kt-badge-neutro">Web e Windows</span>
+              <span class="kt-badge kt-badge-neutro">Feito sobre o Skeleton</span>
             </div>
             <h3 class="product-name" id="medvita-title">Medvita</h3>
-            <p class="product-tagline">A clínica inteira numa tela só<span class="kt-period" aria-hidden="true">.</span></p>
-            <p class="product-body">Agenda, pacientes, prontuário e financeiro para consultórios e pequenas clínicas. Uma secretária virtual conversa com o paciente e marca a consulta, sempre identificada como IA.</p>
+            <p class="product-tagline">A rotina da clínica, do agendamento ao recebimento<span class="kt-period" aria-hidden="true">.</span></p>
+            <p class="product-body">Agenda, pacientes, prontuário e financeiro para consultórios e pequenas clínicas. A secretária virtual conversa com o paciente e marca a consulta, sempre identificada como IA.</p>
             <ul class="features">
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>Agenda por profissional, com encaixes e lista de espera</li>
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-user"/></svg>Cadastro de pacientes com busca rápida</li>
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-file"/></svg>Prontuário eletrônico</li>
-              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-wallet"/></svg>Financeiro integrado à agenda</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-wallet"/></svg>Financeiro ligado à agenda</li>
               <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-message"/></svg>Secretária virtual que marca consultas</li>
-              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-monitor"/></svg>No navegador e no aplicativo para Windows</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-monitor"/></svg>No navegador, com aplicativo para Windows a caminho</li>
             </ul>
             <div class="product-actions">
-              <a class="kt-btn kt-btn-primary kt-btn-md" href="#contato">Quero conhecer o Medvita</a>
-              <a class="kt-btn kt-btn-ghost kt-btn-md" href="#skeleton">Construído sobre o Skeleton</a>
+              <a class="kt-btn kt-btn-primary kt-btn-md" href="#contato">Quero conhecer o Medvita <svg class="icon icon-sm icon-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
           </div>
         </article>
@@ -450,18 +487,18 @@
         <div class="kt-st section-head">
           <div class="kt-eyebrow">Como trabalhamos</div>
           <h2 class="kt-st-title kt-h1" id="como-title">Entregas pequenas, sempre visíveis<span class="kt-period" aria-hidden="true">.</span></h2>
-          <p class="kt-lead">Você acompanha o sistema crescendo, versão por versão. Cada mudança tem registro, revisão e teste.</p>
+          <p class="kt-lead">Você acompanha o sistema crescer, versão por versão. Toda mudança tem registro, revisão e teste.</p>
         </div>
         <ol class="steps">
           <li class="step">
             <span class="step-num">01</span>
             <h3>Entender</h3>
-            <p>Conversamos com quem vai usar o sistema e transformamos o problema em uma lista clara de entregas.</p>
+            <p>A gente conversa com quem vai usar o sistema e transforma o problema em uma lista clara de entregas.</p>
           </li>
           <li class="step">
             <span class="step-num">02</span>
             <h3>Prototipar</h3>
-            <p>Você vê e testa as telas antes do código. Ajustar um protótipo custa minutos.</p>
+            <p>Você vê e testa as telas antes do código. Mudar um protótipo leva minutos.</p>
           </li>
           <li class="step">
             <span class="step-num">03</span>
@@ -471,68 +508,68 @@
           <li class="step">
             <span class="step-num">04</span>
             <h3>Evoluir</h3>
-            <p>Cada versão sai com notas do que mudou. O sistema cresce com o seu negócio, sem recomeçar do zero.</p>
+            <p>Cada versão sai com as notas do que mudou. O sistema cresce com o seu negócio, sem recomeçar do zero.</p>
           </li>
         </ol>
-        <p class="flow" aria-label="Fluxo de cada mudança: issue, branch, pull request, revisão e versão">
-          <b>issue</b><span class="arrow" aria-hidden="true">→</span><b>branch</b><span class="arrow" aria-hidden="true">→</span><b>pull request</b><span class="arrow" aria-hidden="true">→</span><b>revisão</b><span class="arrow" aria-hidden="true">→</span><b>versão</b>
+        <p class="flow">
+          <span class="flow-label">O caminho de cada mudança</span>
+          <b>tarefa</b><span class="arrow" aria-hidden="true">→</span><b>código</b><span class="arrow" aria-hidden="true">→</span><b>revisão</b><span class="arrow" aria-hidden="true">→</span><b>testes</b><span class="arrow" aria-hidden="true">→</span><b>versão</b>
         </p>
       </div>
     </section>
   </main>
 
-  <!-- CTA final e rodapé (faixa invertida) -->
-  <div class="inverse">
-    <section class="cta" id="contato" aria-labelledby="contato-title">
-      <div class="cta-squares" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="container cta-grid">
-        <div class="kt-st">
-          <div class="kt-eyebrow">Contato</div>
-          <h2 class="kt-st-title kt-h1" id="contato-title">Vamos construir o seu sistema<span class="kt-period" aria-hidden="true">.</span></h2>
-          <p class="kt-lead">Conte o que você precisa: um sistema novo, um produto sobre o Skeleton ou o Medvita na sua clínica. A gente responde com os próximos passos.</p>
-        </div>
-        <div class="cta-actions">
-          <!-- PENDENTE: confirmar o e-mail de contato oficial antes de publicar -->
-          <a class="kt-btn kt-btn-primary kt-btn-lg" href="mailto:contato@katua.tech?subject=Quero%20falar%20com%20a%20Katu%C3%A1">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg> Fale com a gente
-          </a>
-          <span class="cta-mail">contato@katua.tech</span>
-        </div>
+  <!-- Contato: faixa azul -->
+  <section class="cta" id="contato" aria-labelledby="contato-title">
+    <div class="cta-squares" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="container cta-grid">
+      <div class="kt-st">
+        <div class="kt-eyebrow">Contato</div>
+        <h2 class="kt-st-title cta-title" id="contato-title">Vamos construir o seu sistema<span class="kt-period" aria-hidden="true">.</span></h2>
+        <p class="kt-lead">Conte o que você precisa: um sistema novo, um produto sobre o Skeleton ou o Medvita na sua clínica. A gente responde com os próximos passos.</p>
       </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <svg class="kt-logo" height="28" width="107" role="img" aria-label="KATUÁ."><use href="#logo"/></svg>
-            <p>Desenvolvimento de software para a era da IA.</p>
-          </div>
-          <nav class="footer-col" aria-labelledby="rodape-produtos">
-            <h2 id="rodape-produtos">Produtos</h2>
-            <ul>
-              <li><a href="#skeleton">Skeleton</a></li>
-              <li><a href="#medvita">Medvita</a></li>
-              <li><a href="https://github.com/alaorneto/skeleton" rel="noopener">Skeleton no GitHub</a></li>
-            </ul>
-          </nav>
-          <nav class="footer-col" aria-labelledby="rodape-empresa">
-            <h2 id="rodape-empresa">Empresa</h2>
-            <ul>
-              <li><a href="#o-que-fazemos">O que fazemos</a></li>
-              <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
-              <li><a href="#contato">Contato</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="footer-bottom">
-          <span>© 2026 Katuá Tech. Todos os direitos reservados.</span>
-          <span>Feito com IA e revisado por pessoas.</span>
-        </div>
+      <div class="cta-actions">
+        <!-- PENDENTE: confirmar o e-mail de contato oficial antes de publicar -->
+        <a class="kt-btn kt-btn-on-azul kt-btn-lg" href="mailto:contato@katua.tech?subject=Quero%20falar%20com%20a%20Katu%C3%A1">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg> Fale com a gente
+        </a>
+        <a class="cta-mail" href="mailto:contato@katua.tech">contato@katua.tech</a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </section>
 
-  <script src="assets/js/theme.js" defer></script>
+  <!-- Rodapé: faixa invertida -->
+  <footer class="site-footer inverse">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p>Desenvolvimento de software para a era da IA<span class="kt-period" aria-hidden="true">.</span></p>
+        </div>
+        <nav class="footer-col" aria-labelledby="rodape-produtos">
+          <h2 id="rodape-produtos">Produtos</h2>
+          <ul>
+            <li><a href="#skeleton">Skeleton</a></li>
+            <li><a href="#medvita">Medvita</a></li>
+            <li><a href="https://github.com/alaorneto/skeleton" rel="noopener">Skeleton no GitHub</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-labelledby="rodape-empresa">
+          <h2 id="rodape-empresa">Empresa</h2>
+          <ul>
+            <li><a href="#o-que-fazemos">O que fazemos</a></li>
+            <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+      <svg class="footer-wordmark" role="img" aria-label="KATUÁ."><use href="#logo"/></svg>
+      <div class="footer-bottom">
+        <span>© 2026 Katuá Tech. Todos os direitos reservados.</span>
+        <span>Feito com IA e revisado por pessoas.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
