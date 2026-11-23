@@ -74,7 +74,7 @@ Não há passo manual: quando um PR com o label `release` é mesclado, o workflo
 
 ## Marca
 
-O site segue o design system **KATUÁ.**: tokens semânticos em vez de HEX, títulos com o ponto azul, Archivo nos títulos, Inter no texto e JetBrains Mono no código, ícones Lucide. As imagens dos produtos são ilustrações desenhadas a partir das telas reais, não capturas. Nas ilustrações do Medvita entram as cores da marca Medvita (azul, verde e petróleo), só como acento.
+O site segue o design system **KATUÁ.**: tokens semânticos em vez de HEX, títulos com o ponto azul, Archivo nos títulos, IBM Plex Sans no texto e JetBrains Mono no código, ícones Lucide. As imagens dos produtos são ilustrações desenhadas a partir das telas reais, não capturas. Nas ilustrações do Medvita entram as cores da marca Medvita (azul, verde e petróleo), só como acento.
 
 ## Pendências antes de publicar
 

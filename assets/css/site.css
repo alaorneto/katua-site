@@ -330,5 +330,5 @@ h1, h2, h3 { text-wrap: balance; }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
 .footer-col a { color: var(--ink); text-decoration: none; font-size: 15px; }
 .footer-col a:hover { color: var(--azul); text-decoration: underline; text-underline-offset: 4px; }
-.footer-wordmark { display: block; width: 15%; height: auto; aspect-ratio: 547.9 / 143.5; margin-top: var(--space-16); color: var(--ink); }
+.footer-wordmark { display: block; width: max(15%, 96px); height: auto; aspect-ratio: 547.9 / 143.5; margin-top: var(--space-16); color: var(--ink); }
 .footer-bottom { margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); font-size: 14px; line-height: 20px; color: var(--ink-muted); }
