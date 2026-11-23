@@ -2,6 +2,12 @@
 
 Todas as mudanças publicadas deste projeto. Este arquivo é escrito pela automação de release; não edite as seções de versão à mão.
 
+## [0.3.0](https://github.com/alaorneto/katua-site/compare/v0.2.0...v0.3.0) — 2026-11-23
+
+### Melhorias
+
+- Trocar a fonte de texto para IBM Plex Sans e respeitar o tamanho mínimo do logotipo ([#8](https://github.com/alaorneto/katua-site/issues/8)) — PR [#9](https://github.com/alaorneto/katua-site/pull/9)
+
 ## [0.2.0](https://github.com/alaorneto/katua-site/compare/v0.1.0...v0.2.0) — 2026-11-23
 
 ### Melhorias
