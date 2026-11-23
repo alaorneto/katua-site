@@ -36,7 +36,7 @@ status() { curl -s -o /dev/null -w '%{http_code}' "$base$1"; }
 headers() { curl -s -D - -o /dev/null "$@"; }
 
 check "/ responde 200"                '[ "$(status /)" = 200 ]'
-check "/ traz o site"                 'curl -s "$base/" | grep -q "Software rápido"'
+check "/ traz o site"                 'curl -s "$base/" | grep -q "Experiência que faz a diferença"'
 check "/healthz responde 200"         '[ "$(status /healthz)" = 200 ]'
 check "caminho inexistente dá 404"    '[ "$(status /nao-existe)" = 404 ]'
 check "404 usa a página própria"      'curl -s "$base/nao-existe" | grep -q "Esta página não existe"'
