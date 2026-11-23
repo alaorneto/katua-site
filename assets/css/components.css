@@ -1,0 +1,55 @@
+/* KATUÁ. Design System — classes kt-* (cópia de components/bundle.css do design system).
+   Dependem só dos tokens de tokens.css. */
+
+/* Logo */
+.kt-logo { display: block; color: var(--ink); flex: none; }
+
+/* Button */
+.kt-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); box-sizing: border-box; font-family: var(--font-sans); font-weight: 600; text-decoration: none; border: 1.5px solid transparent; border-radius: var(--radius-md); cursor: pointer; transition: background-color .15s ease, border-color .15s ease, color .15s ease; white-space: nowrap; }
+.kt-btn-sm { height: 36px; padding: 0 var(--space-4); font-size: 14px; }
+.kt-btn-md { height: 44px; padding: 0 var(--space-6); font-size: 16px; }
+.kt-btn-lg { height: 56px; padding: 0 var(--space-8); font-size: 18px; }
+.kt-btn-primary { background: var(--azul); color: var(--on-azul); }
+.kt-btn-primary:hover { background: var(--azul-hover); }
+.kt-btn-secondary { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.kt-btn-secondary:hover { border-color: var(--ink); }
+.kt-btn-ghost { background: transparent; color: var(--azul); padding-left: var(--space-2); padding-right: var(--space-2); }
+.kt-btn-ghost:hover { color: var(--azul-hover); text-decoration: underline; text-underline-offset: 4px; }
+.kt-btn:disabled, .kt-btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }
+.kt-btn:focus-visible, .kt-input:focus-visible, .kt-card-link:focus-visible, .kt-nav-link:focus-visible, .kt-nav-home:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+/* Badge */
+.kt-badge { display: inline-flex; align-items: center; height: 24px; padding: 0 var(--space-2); border-radius: var(--radius-sm); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .04em; }
+.kt-badge-neutro { background: var(--surface-alt); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.kt-badge-azul { background: var(--azul-suave); color: var(--azul); }
+.kt-badge-sucesso { background: transparent; color: var(--sucesso); box-shadow: inset 0 0 0 1.5px var(--sucesso); }
+.kt-badge-alerta { background: transparent; color: var(--alerta); box-shadow: inset 0 0 0 1.5px var(--alerta); }
+.kt-badge-erro { background: transparent; color: var(--erro); box-shadow: inset 0 0 0 1.5px var(--erro); }
+
+/* Section title */
+.kt-st { display: flex; flex-direction: column; gap: var(--space-3); max-width: 760px; }
+.kt-st-center { align-items: center; text-align: center; margin-left: auto; margin-right: auto; }
+.kt-eyebrow { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.kt-st-title { margin: 0; font-family: var(--font-display); color: var(--ink); }
+.kt-display { font-size: 56px; line-height: 60px; font-weight: 900; letter-spacing: -.02em; }
+.kt-h1 { font-size: 40px; line-height: 44px; font-weight: 900; letter-spacing: -.015em; }
+@media (min-width: 1024px) { .kt-display { font-size: 72px; line-height: 72px; } }
+@media (max-width: 600px) { .kt-h1 { font-size: 32px; line-height: 38px; } .kt-display { font-size: 44px; line-height: 48px; } }
+.kt-period { color: var(--azul); }
+.kt-lead { margin: var(--space-1) 0 0; font-size: 18px; line-height: 28px; color: var(--ink-muted); }
+
+/* Card */
+.kt-card { display: flex; flex-direction: column; gap: var(--space-3); box-sizing: border-box; padding: var(--space-6); background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius-md); color: var(--ink); text-decoration: none; transition: box-shadow .15s ease, border-color .15s ease; }
+.kt-card-link:hover { border-color: var(--line-strong); box-shadow: var(--shadow-md); }
+.kt-card-title { margin: 0; font-family: var(--font-display); font-size: 24px; line-height: 30px; font-weight: 800; }
+.kt-card-body { color: var(--ink-muted); font-size: 16px; line-height: 24px; }
+.kt-card-cta { margin-top: auto; padding-top: var(--space-2); color: var(--azul); font-weight: 600; }
+
+/* Navbar */
+.kt-nav { background: var(--surface); border-bottom: 1px solid var(--line); }
+.kt-nav-inner { max-width: var(--container-max); margin: 0 auto; padding: var(--space-4) var(--container-padding); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-8); }
+.kt-nav-home { display: inline-flex; color: var(--ink); border-radius: var(--radius-sm); }
+.kt-nav-links { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); flex: 1 1 auto; }
+.kt-nav-link { color: var(--ink-muted); text-decoration: none; font-weight: 500; font-size: 15px; padding: var(--space-2) 0; border-radius: var(--radius-sm); }
+.kt-nav-link:hover, .kt-nav-link[aria-current="page"] { color: var(--ink); }
+.kt-nav-link[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--azul); }
